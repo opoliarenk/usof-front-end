@@ -1,6 +1,5 @@
 import '../App.css'
-import React from 'react';
-import {useState} from 'react';
+import React, {useState} from 'react';
 
 const SignIn = ({loginUser}) => {
     const [login, setLogin] = useState('');
@@ -14,8 +13,7 @@ const SignIn = ({loginUser}) => {
             return;
         }
 
-       // loginUser({login, password});
-        loginUser();
+        loginUser({login, password});
 
         setLogin('');
         setPassword('')
@@ -39,7 +37,7 @@ const SignIn = ({loginUser}) => {
                     <input type="password" name="password" placeholder="enter your password" value={password} onChange={(e) =>
                     setPassword(e.target.value)}/>
                     <p></p>
-                    <input type="button" name="send" value="Send" onClick={onSubmit}/>
+                    <input type="submit" name="send" value="Send" onClick={onSubmit}/>
                 </form>
             </div>
         </div>

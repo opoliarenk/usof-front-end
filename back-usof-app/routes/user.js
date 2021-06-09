@@ -5,7 +5,8 @@ const user = require('../controllers/user');
 const {isToken} = require('../midleware/isToken');
 const {isAdmin} = require('../midleware/isAdmin');
 
-router.get('/', isToken, isAdmin, user.getALlUsers);
+// router.get('/', isToken, isAdmin, user.getALlUsers);
+router.get('/', user.getALlUsers);
 
 router.get('/:id', user.getUserById);
 

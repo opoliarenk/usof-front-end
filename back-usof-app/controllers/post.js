@@ -6,7 +6,6 @@ const Comment = require('../models/Comment');
 const LikePost = require('../models/LikePost');
 const Category = require('../models/Category');
 const asyncHand = require('../midleware/asyncHand');
-const jwt = require("jsonwebtoken");
 
 exports.getAllPosts = asyncHand(async (req, res) => {
     if (req.user && req.user.role === 'admin') {
