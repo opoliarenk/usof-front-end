@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from 'axios';
+
 
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -36,12 +38,9 @@ const App = () => {
     }
 
     const getUsers = async () => {
-        const res = await fetch('http://localhost:3000/api/users');
+        const users = axios.get('http://localhost:3000/api/users');
 
-        const data = await res.json();
-
-        console.log(data);
-        return data;
+        return users;
     }
 
   return (

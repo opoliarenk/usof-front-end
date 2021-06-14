@@ -1,5 +1,6 @@
 import '../App.css'
 import React from 'react';
+import {render} from "@testing-library/react";
 
 const Users = ({getUsers}) => {
     const users = getUsers();
@@ -14,6 +15,10 @@ const Users = ({getUsers}) => {
             </ul>
             <div className="centered">
                 <p>Users</p>
+                <ul>
+                    {/*<li>{users}</li>*/}
+                    {/*{users.map(person => <li>{person.fullName}</li>)}*/}
+                </ul>
             </div>
         </div>
     );
