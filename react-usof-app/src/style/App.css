@@ -33,9 +33,10 @@ body {
 
 form {
     /*border: 1px solid;*/
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 20px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+    opacity: 0.8;
 }
 
 form:hover {
@@ -68,26 +69,26 @@ input[type=submit] {
 }
 
 ul {
+    position: absolute;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #B49A67;
 }
 
 li {
+    padding-left: 10px;
     float: left;
 }
 
 li a {
+    background-color: #87A893;
     display: block;
     text-align: center;
-    padding: 14px;
+    padding: 10px;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 li a:hover {
-    border-radius: 30px;
+    border-radius: 10px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.1);
 }
 
@@ -98,4 +99,11 @@ input[type=submit] {
 
 input[type=submit]:active {
     box-shadow:0 0 15px 4px rgba(0,0,0,0.3);
+}
+
+.menuBar {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    padding-top: 20px;
 }

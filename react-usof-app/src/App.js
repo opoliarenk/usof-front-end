@@ -2,10 +2,10 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import axios from 'axios';
 
-
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Users from "./components/Users";
+
 
 const App = () => {
 
@@ -45,9 +45,19 @@ const App = () => {
 
   return (
       <Router>
-          <Route path="/api/auth">
+          <ul className="menuBar">
+              <li><a href="/">Home</a></li>
+              <li><a href="/api/users">Users</a></li>
+              <li><a href="/api/auth/login">Sign In</a></li>
+              <li><a href="/api/auth/register">Sign Up</a></li>
+          </ul>
+          <Route path="/api/auth/login">
               <div className="container">
                   <SignIn loginUser={login}/>
+              </div>
+          </Route>
+          <Route path="/api/auth/register">
+              <div className="container">
                   <SignUp registerUser={register}/>
               </div>
           </Route>
