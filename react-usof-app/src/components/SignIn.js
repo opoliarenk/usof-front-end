@@ -1,9 +1,25 @@
 import '../style/Auth.css'
 import React, {useState} from 'react';
+import { useHistory } from 'react-router-dom';
 
-const SignIn = ({loginUser}) => {
+const SignIn = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
+
+    const loginUser = async (user) => {
+        const res = await fetch('http://localhost:3000/api/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user),
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -31,6 +47,8 @@ const SignIn = ({loginUser}) => {
                 setPassword(e.target.value)}/>
                 <p></p>
                 <input type="submit" name="send" value="Send" onClick={onSubmit}/>
+                <button onClick={() => history.push('/api/auth/password-reset')
+                }>Forgot password?</button>
             </form>
         </div>
     );

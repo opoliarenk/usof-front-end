@@ -1,6 +1,6 @@
 import '../style/Auth.css'
 import React from 'react';
-import {render} from "@testing-library/react";
+// import {render} from "@testing-library/react";
 
 const Users = ({getUsers}) => {
     const users = getUsers();
@@ -9,10 +9,10 @@ const Users = ({getUsers}) => {
         <div className="users">
             <div className="centered">
                 <p>Users</p>
-                <ul>
-                    {/*<li>{users}</li>*/}
-                    {/*{users.map(person => <li>{person.fullName}</li>)}*/}
-                </ul>
+                <div>
+                    <button>{users}</button>
+                    {users.map(person => <button>{person.fullName}</button>)}
+                </div>
             </div>
         </div>
     );

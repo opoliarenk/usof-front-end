@@ -9,6 +9,20 @@ const SignUp = ({registerUser}) => {
     const [password, setPassword] = useState('');
     const [passConfirm, setPassConfirm] = useState('');
 
+    const register = async (user) => {
+        const res = await fetch('http://localhost:3000/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user),
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+    }
+
     const onSubmit = (e) => {
         e.preventDefault();
 
