@@ -1,9 +1,16 @@
 import '../style/Auth.css'
 import React from 'react';
+import axios from "axios";
 // import {render} from "@testing-library/react";
 
-const Users = ({getUsers}) => {
+const Users = () => {
     const users = getUsers();
+
+    const getUsers = async () => {
+        const users = axios.get('http://localhost:3000/api/users');
+
+        return users;
+    }
 
     return (
         <div className="users">

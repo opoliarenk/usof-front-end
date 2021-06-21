@@ -2,9 +2,23 @@ import '../style/Auth.css'
 import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 
-const PassReset = ({resetPass}) => {
+const PassReset = () => {
     const [email, setEmail] = useState('');
     const history = useHistory();
+
+    const resetPass = async (user) => {
+        const res = await fetch('http://localhost:3000/api/auth/password-reset', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(user),
+        });
+
+        const data = await res.json();
+
+        console.log(data);
+    }
 
     const onSubmit = (e) => {
         e.preventDefault();
