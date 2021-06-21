@@ -2,7 +2,7 @@ import '../style/Auth.css'
 import React, {useState} from 'react';
 
 
-const SignUp = ({registerUser}) => {
+const SignUp = () => {
     const [fullName, setName] = useState('');
     const [email, setEmail] = useState('');
     const [login, setLogin] = useState('');
@@ -31,7 +31,7 @@ const SignUp = ({registerUser}) => {
             return;
         }
 
-        registerUser({fullName, email, login, password, passConfirm});
+        register({fullName, email, login, password, passConfirm});
 
         setLogin('');
         setPassword('');

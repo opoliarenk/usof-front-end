@@ -11,7 +11,7 @@ router.post("/login", user.login);
 //to do -> logout
 router.post("/logout", isToken, user.logout);
 
-router.post("/password-reset", isToken, user.resetPass);
+router.post("/password-reset", user.resetPass);
 
 router.get("/password-reset/:code", user.resetForm);
 

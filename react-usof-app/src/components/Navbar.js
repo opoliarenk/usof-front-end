@@ -7,10 +7,10 @@ const Navbar = () => {
 
     return (
         <div>
-            <button onClick={() => history.push('/')}>Home</button>
-            <button onClick={() => history.push('/api/auth/login')}>Sign in</button>
-            <button onClick={() => history.push('/api/auth/register')}>Sign up</button>
-            <button onClick={() => history.push('/api/auth/users')}>Users</button>
+            <button className="navBar" onClick={() => history.push('/')}>Home</button>
+            <button className="navBar" onClick={() => history.push('/api/auth/login')}>Sign in</button>
+            <button className="navBar" onClick={() => history.push('/api/auth/register')}>Sign up</button>
+            <button className="navBar" onClick={() => history.push('/api/users')}>Users</button>
         </div>
     );
 }
